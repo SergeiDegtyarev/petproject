@@ -15,14 +15,17 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public UserDto findUserById(Long id){
-        var user = repository.findUserById(id);
-        UserDto dto = new UserDto(user.getFirstName(), user.getLastName(), user.getAge(), user.getGender());
-        return dto;
+    public User findUserById(Long id){
+        return repository.findUserById(id);
     }
     public User creatUser(User user){
         return repository.save(user);
     }
+    public User updateUser(User user){
+        return repository.save(user);
+    }
+
+
 
 
 }
